@@ -1,14 +1,17 @@
+import dotenv from "dotenv";
+dotenv.config();
+
 import express from "express";
 import cors from "cors";
-import prestasiRouter from "./routes/prestasi.js";
-import fasilitasRouter from "./routes/fasilitas.js";
-import ekstrakulikulerRouter from "./routes/ekstrakulikuler.js";
+// Kita panggil file gabungan yang baru saja (akhiran .js nya kita hapus biar aman)
+import apiRouter from "./routes/index"; 
 
 const app = express();
 const PORT = 4000;
 
 app.use(cors());
 app.use(express.json());
+app.use(express.static('public'));
 
 app.get("/", (_req, res) => {
   res.json({ message: "API SMK 10 SMARTSCHOOL aktif" });
@@ -18,9 +21,8 @@ app.get("/api/health", (_req, res) => {
   res.json({ status: "ok" });
 });
 
-app.use("/api/prestasi", prestasiRouter);
-app.use("/api/fasilitas", fasilitasRouter);
-app.use("/api/ekstrakulikuler", ekstrakulikulerRouter);
+// Cukup satu baris ini saja, semua rute langsung tersambung! :d
+app.use("/api", apiRouter);
 
 app.use((err: Error, _req: express.Request, res: express.Response, _next: express.NextFunction) => {
   console.error(err);
