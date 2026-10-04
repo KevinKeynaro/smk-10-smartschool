@@ -1,0 +1,10 @@
+[
+  { "title": "Juara Kompetisi Cyber Security Tingkat Kabupaten", "team": "Tim TKJ", "date": "20 April 2024", "place": "Provinsi Jawa Barat", "kategori": "Akademik", "image": "/images/prestasi-cyber-security.jpg" },
+  { "title": "Juara Kompetisi Web Development Tingkat Provinsi", "team": "Tim RPL", "date": "12 Maret 2025", "place": "Kab. Sukabumi", "kategori": "Akademik", "image": "/images/prestasi-web-development.jpg" },
+  { "title": "Juara Festival Film Animasi Tingkat Provinsi", "team": "Tim Animasi", "date": "08 Juni 2023", "place": "Kota Bekasi", "kategori": "Seni Budaya", "image": "/images/prestasi-animasi.jpg" },
+  { "title": "Juara Lomba Robotika Tingkat Nasional", "team": "Tim TE", "date": "17 Juli 2024", "place": "Kota Depok", "kategori": "Akademik", "image": "/images/prestasi-robotika.jpg" },
+  { "title": "Juara Teater Pelajar Tingkat Nasional", "team": "Tim Teater", "date": "22 Juli 2023", "place": "Kota Bogor", "kategori": "Seni Budaya", "image": "/images/prestasi-teater.jpg" },
+  { "title": "Juara Lomba Musik Band Tingkat Kabupaten", "team": "Tim Musik", "date": "25 Mei 2024", "place": "Kab. Bandung", "kategori": "Seni Budaya", "image": "/images/prestasi-musik-band.jpg" },
+  { "title": "Juara I Tari Tradisional", "team": "Tim Tari Tradisional", "date": "-", "place": "-", "kategori": "Seni Budaya", "image": "/images/prestasi-tari-tradisional.jpg" },
+  { "title": "Juara Musik Tradisional", "team": "Tim Musik Tradisional", "date": "-", "place": "-", "kategori": "Seni Budaya", "image": "/images/prestasi-musik-tradisional.jpg" }
+]
