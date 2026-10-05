@@ -54,31 +54,6 @@ export const sambutan = "Selamat Datang di Website Resmi Sekolah Kami! Platform 
 
 export const programKeahlianSingkat = ["Teknologi Informasi", "Bisnis & Manajemen", "Teknologi Manufaktur & Rekayasa"];
 
-export const fasilitas = [
-  { name: "Laboratorium Komputer", desc: "Dilengkapi dengan komputer berstandar industri dan koneksi internet yang stabil.", image: "/images/fasilitas-lab-komputer.jpg" },
-  { name: "Perpustakaan", desc: "Tersedia ribuan koleksi buku, baik cetak maupun digital untuk menunjang literasi siswa.", image: "/images/fasilitas-perpustakaan.jpg" },
-  { name: "Ruang Kelas", desc: "Ruang kelas yang nyaman, bersih dan dilengkapi fasilitas pembelajaran.", image: "/images/fasilitas-kelas.jpg" },
-  { name: "Lapangan Olahraga", desc: "Tersedia lapangan voli, basket, serta fasilitas olahraga lainnya.", image: "/images/fasilitas-lapangan.jpg" },
-  { name: "Lab Keahlian", desc: "Fasilitas praktik yang lengkap sesuai dengan program keahlian masing-masing.", image: "/images/fasilitas-lab-keahlian.jpg" },
-  { name: "Kantin Sekolah", desc: "Menyediakan makanan dan minuman sehat dengan harga terjangkau.", image: "/images/fasilitas-kantin.jpg" },
-];export const ekskul = [
-  { name: "Pramuka", desc: "Melatih kedisiplinan, kepemimpinan, dan rasa tanggung jawab.", image: "/images/ekskul-pramuka.jpg" },
-  { name: "Band", desc: "Menyalurkan bakat musik dan melatih kreativitas.", image: "/images/ekskul-band.jpg" },
-  { name: "Tari Tradisional", desc: "Melestarikan budaya Indonesia dan melatih kepercayaan diri.", image: "/images/ekskul-tari.jpg" },
-  { name: "Jurnalistik & Fotografi", desc: "Melatih kemampuan menulis, berpikir kritis, dan dokumentasi kegiatan sekolah.", image: "/images/ekskul-jurnalistik.jpg" },
-];
-
-export type PrestasiKategori = "Akademik" | "Seni Budaya";
-export const prestasi: { title: string; team: string; date: string; place: string; kategori: PrestasiKategori; image?: string }[] = [
-  { title: "Juara Kompetisi Cyber Security Tingkat Kabupaten", team: "Tim TKJ", date: "20 April 2024", place: "Provinsi Jawa Barat", kategori: "Akademik", image: "/images/prestasi-cyber-security.jpg" },
-  { title: "Juara Kompetisi Web Development Tingkat Provinsi", team: "Tim RPL", date: "12 Maret 2025", place: "Kab. Sukabumi", kategori: "Akademik", image: "/images/prestasi-web-development.jpg" },
-  { title: "Juara Festival Film Animasi Tingkat Provinsi", team: "Tim Animasi", date: "08 Juni 2023", place: "Kota Bekasi", kategori: "Seni Budaya", image: "/images/prestasi-animasi.jpg" },
-  { title: "Juara Lomba Robotika Tingkat Nasional", team: "Tim TE", date: "17 Juli 2024", place: "Kota Depok", kategori: "Akademik", image: "/images/prestasi-robotika.jpg" },
-  { title: "Juara Teater Pelajar Tingkat Nasional", team: "Tim Teater", date: "22 Juli 2023", place: "Kota Bogor", kategori: "Seni Budaya", image: "/images/prestasi-teater.jpg" },
-  { title: "Juara Lomba Musik Band Tingkat Kabupaten", team: "Tim Musik", date: "25 Mei 2024", place: "Kab. Bandung", kategori: "Seni Budaya", image: "/images/prestasi-musik-band.jpg" },
-  { title: "Juara I Tari Tradisional", team: "Tim Tari Tradisional", date: "-", place: "-", kategori: "Seni Budaya", image: "/images/prestasi-tari-tradisional.jpg" },
-  { title: "Juara Musik Tradisional", team: "Tim Musik Tradisional", date: "-", place: "-", kategori: "Seni Budaya", image: "/images/prestasi-musik-tradisional.jpg" },
-];
 
 export type Jurusan = {
   slug: string; short: string; name: string; intro: string; icon: "code" | "network" | "film" | "bag" | "circuit" | "palette"; logo?: string;

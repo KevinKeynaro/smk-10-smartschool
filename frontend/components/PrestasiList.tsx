@@ -1,13 +1,19 @@
 "use client";
 
 import { useState } from "react";
-import { prestasi, type PrestasiKategori } from "@/lib/data";
+import { PrestasiItem, PrestasiKategori } from "@/lib/api";
 
 const filters: ("Semua" | PrestasiKategori)[] = ["Semua", "Akademik", "Seni Budaya"];
 
-export default function PrestasiList({ limit }: { limit?: number }) {
+interface PrestasiListProps {
+  data: PrestasiItem[];
+  limit?: number;
+}
+
+export default function PrestasiList({ data, limit }: PrestasiListProps) {
   const [active, setActive] = useState<(typeof filters)[number]>("Semua");
-  const items = prestasi.filter((p) => active === "Semua" || p.kategori === active).slice(0, limit);
+  // Menggunakan data dari props, bukan dari import lokal lagi
+  const items = (data || []).filter((p) => active === "Semua" || p.kategori === active).slice(0, limit);
 
   return (
     <div>
@@ -28,8 +34,8 @@ export default function PrestasiList({ limit }: { limit?: number }) {
       </div>
 
       <div className="mt-6 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-        {items.map((p) => (
-          <article key={p.title} className="overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-sm">
+        {items.map((p, index) => (
+          <article key={p.id || index} className="overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-sm">
             <div
               className="h-32 bg-gradient-to-br from-navy-700 to-navy-900 bg-cover bg-center"
               style={p.image ? { backgroundImage: `url(${p.image})` } : undefined}
