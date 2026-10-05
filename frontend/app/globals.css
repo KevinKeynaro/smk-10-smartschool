@@ -1,0 +1,18 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html { scroll-behavior: smooth; }
+body { @apply bg-white text-ink antialiased; }
+:focus-visible { outline: 2px solid #5BB5F5; outline-offset: 2px; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } * { transition: none !important; } }
+
+/* Hero: taruh foto asli di /public/images/hero.jpg (kalau belum ada, otomatis pakai gradient navy) */
+.hero-bg {
+  background-image:
+    linear-gradient(180deg, rgba(7,18,54,.55), rgba(7,18,54,.85)),
+    url("/images/hero.jpg"),
+    linear-gradient(135deg, #14286B, #071236);
+  background-size: cover;
+  background-position: center;
+}
