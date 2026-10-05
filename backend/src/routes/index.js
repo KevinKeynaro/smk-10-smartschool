@@ -24,11 +24,11 @@ router.get("/fasilitas", async (_req, res) => {
 });
 
 // Rute ekstrakurikuler
-router.get("/ekstrakulikuler", async (_req, res) => {
-  const { data, error } = await supabase.from("ekstrakulikuler").select("*");
+router.get("/ekstrakurikuler", async (_req, res) => {
+  const { data, error } = await supabase.from("ekstrakurikuler").select("*");
   
   if (error) {
-    return res.status(500).json({ pesan: "Ups, gagal mengambil data ekstrakulikuler", error });
+    return res.status(500).json({ pesan: "Ups, gagal mengambil data ekstrakurikuler", error });
   }
   res.json(data);
 });

@@ -5,10 +5,13 @@ import SectionTitle from "@/components/SectionTitle";
 import PrestasiList from "@/components/PrestasiList";
 import { jurusan, sambutan, school } from "@/lib/data";
 import { IconBag, IconCircuit, IconCode, IconFilm, IconNetwork, IconPalette } from "@/components/Icons";
+import { getPrestasi } from "@/lib/api";
 
 const jurusanIcon = { code: IconCode, network: IconNetwork, film: IconFilm, bag: IconBag, circuit: IconCircuit, palette: IconPalette };
 
-export default function Home() {
+export default async function Home() {
+  const dataPrestasi = await getPrestasi();
+
   return (
     <>
       {/* Hero */}
@@ -51,7 +54,7 @@ export default function Home() {
         </div>
         <div className="mt-10 flex snap-x snap-mandatory gap-5 overflow-x-auto px-5 pb-4 [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden md:mx-auto md:max-w-6xl">
           {jurusan.map((j) => {
-            const Icon = jurusanIcon[j.icon];
+            const Icon = jurusanIcon[j.icon as keyof typeof jurusanIcon];
             return (
             <article key={j.slug} className="flex w-72 shrink-0 snap-start flex-col rounded-2xl border border-gray-200 bg-white p-5 shadow-sm">
               <span className="mx-auto flex h-20 w-20 items-center justify-center rounded-xl bg-navy text-sky-brand">
@@ -71,7 +74,7 @@ export default function Home() {
           <p className="text-xs font-semibold text-sky-brand">✦ INFORMASI</p>
           <h2 className="mt-2 text-2xl font-bold md:text-3xl">Prestasi <span className="text-sky-brand">Siswa</span></h2>
           <p className="mt-2 max-w-xl text-sm text-gray-600">Berbagai prestasi yang telah diraih oleh siswa-siswi SMK 10 di Tingkat Kabupaten, provinsi, hingga nasional.</p>
-          <div className="mt-6"><PrestasiList /></div>
+          <div className="mt-6"><PrestasiList data={dataPrestasi} /></div>
         </div>
       </section>
     </>

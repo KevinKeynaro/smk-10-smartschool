@@ -1,17 +1,28 @@
-import PageHero from "@/components/PageHero";
-import PrestasiList from "@/components/PrestasiList";
+import { PrestasiItem } from "@/lib/api";
 
-export const metadata = { title: "Prestasi Siswa — SMK 10 SMARTSCHOOL" };
+// Tambahkan 'data' ke dalam interface props
+interface PrestasiListProps {
+  data: PrestasiItem[];
+  limit?: number;
+}
 
-export default function PrestasiPage() {
+export default function PrestasiList({ data, limit }: PrestasiListProps) {
+  // Jika ada limit (misal di halaman beranda), potong array-nya. Jika tidak, tampilkan semua.
+  const displayData = limit ? data.slice(0, limit) : data;
+
   return (
-    <>
-      <PageHero eyebrow="Prestasi Siswa / Siswi" title="Mengukir Prestasi Untuk Masa Depan" />
-      <section className="mx-auto max-w-6xl px-5 py-14">
-        <h2 className="text-2xl font-bold">Prestasi <span className="text-sky-brand">Siswa</span></h2>
-        <p className="mt-2 max-w-xl text-sm text-gray-600">Berbagai prestasi yang telah diraih oleh siswa-siswi SMK 10 di Tingkat Kabupaten, provinsi, hingga nasional.</p>
-        <div className="mt-6"><PrestasiList /></div>
-      </section>
-    </>
+    <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+      {displayData.map((p) => (
+        <div key={p.id || p.title} className="border p-4 rounded-lg shadow-sm">
+          {p.image && (
+            <img src={p.image} alt={p.title} className="w-full h-48 object-cover mb-4 rounded" />
+          )}
+          <h3 className="text-xl font-semibold">{p.title}</h3>
+          <p className="text-sm text-blue-600 font-medium mb-2">{p.kategori}</p>
+          <p className="text-gray-700"><strong>Tim:</strong> {p.team}</p>
+          <p className="text-gray-600 text-sm mt-1">{p.place} - {p.date}</p>
+        </div>
+      ))}
+    </div>
   );
 }
