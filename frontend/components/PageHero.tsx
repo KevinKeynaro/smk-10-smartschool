@@ -8,7 +8,7 @@ export default function PageHero({ eyebrow, title, description, crumb, image = "
       className="bg-cover bg-center text-white"
       style={{ backgroundImage: `linear-gradient(180deg, rgba(7,18,54,.55), rgba(7,18,54,.85)), url(${image})` }}
     >
-      <div className="mx-auto max-w-6xl px-5 pb-16 pt-32">
+      <div className="mx-auto max-w-6xl px-5 pb-16 pt-20">
         {eyebrow && (
           <p className="mb-3 inline-flex items-center gap-2 rounded-full bg-white/10 px-3 py-1 text-xs">
             <span aria-hidden className="text-sky-brand">✦</span> {eyebrow}
