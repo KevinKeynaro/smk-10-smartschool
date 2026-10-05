@@ -3,8 +3,7 @@ dotenv.config();
 
 import express from "express";
 import cors from "cors";
-// Kita panggil file gabungan yang baru saja (akhiran .js nya kita hapus biar aman)
-import apiRouter from "./routes/index"; 
+import apiRouter from "./routes/index.js"; 
 
 const app = express();
 const PORT = 4000;
@@ -21,10 +20,9 @@ app.get("/api/health", (_req, res) => {
   res.json({ status: "ok" });
 });
 
-// Cukup satu baris ini saja, semua rute langsung tersambung! :d
 app.use("/api", apiRouter);
 
-app.use((err: Error, _req: express.Request, res: express.Response, _next: express.NextFunction) => {
+app.use((err, _req, res, _next) => {
   console.error(err);
   res.status(500).json({ message: "Terjadi kesalahan pada server" });
 });
