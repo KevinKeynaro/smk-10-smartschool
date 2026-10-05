@@ -6,7 +6,7 @@ const socialIcon = { Instagram: IconInstagram, Facebook: IconFacebook, YouTube: 
 
 export default function Footer() {
   return (
-    <footer className="bg-navy text-white">
+    <footer className="mt-auto bg-navy text-white">
       <div className="mx-auto grid max-w-6xl gap-10 px-5 py-14 md:grid-cols-3">
         <div>
           <p className="flex items-center gap-2 font-bold"><span aria-hidden className="text-sky-brand">✦</span> {school.name}</p>
