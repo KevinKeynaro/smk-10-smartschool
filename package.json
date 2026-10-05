@@ -2,11 +2,10 @@
   "name": "smk10-smartschool-backend",
   "version": "1.0.0",
   "private": true,
+  "type": "module",
   "scripts": {
-    "dev": "tsx watch src/server.ts",
-    "start": "tsx src/server.ts",
-    "build": "tsc",
-    "typecheck": "tsc --noEmit"
+    "dev": "nodemon src/server.js",
+    "start": "node src/server.js"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.117.2",
@@ -15,10 +14,6 @@
     "express": "^5.2.1"
   },
   "devDependencies": {
-    "@types/cors": "^2.8.17",
-    "@types/express": "^5.0.3",
-    "@types/node": "^22.0.0",
-    "tsx": "^4.19.0",
-    "typescript": "^5.6.0"
+    "nodemon": "^3.1.0"
   }
 }
