@@ -13,7 +13,7 @@ export default function Home() {
     <>
       {/* Hero */}
       <section className="hero-bg text-white">
-        <div className="mx-auto max-w-6xl px-5 pb-28 pt-40">
+        <div className="mx-auto max-w-6xl px-5 pb-28 pt-28">
           <h1 className="max-w-2xl text-4xl font-bold leading-tight md:text-6xl">
             Tempat Tumbuh Kembang dan Berkembangnya Generasi Unggul
           </h1>

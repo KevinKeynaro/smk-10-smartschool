@@ -10,7 +10,7 @@ export default function Navbar() {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className={`absolute inset-x-0 top-0 z-30 text-white`}>
+    <header className="sticky top-0 z-50 w-full bg-navy-900/95 text-white backdrop-blur-md border-b border-white/10 shadow-sm transition-all">
       <div className="mx-auto flex max-w-6xl items-center justify-between px-5 py-5">
         <Link href="/" className="flex items-center gap-2 text-sm font-bold tracking-wide">
           <span aria-hidden className="text-sky-brand">✦</span> SMK 10 SMARTSCHOOL
